@@ -40,6 +40,8 @@ const VSearch = {
       <li v-for="p of categoryFilter" @click="updateShowMusicList.category(p)" :class="{'text-highlight':p===showMusicListType.category}">{{p}}</li>
       <li @click="copy">随机</li>
     </ul>
+    <div class="filter-size" v-if="filterSize.len === total">ALL - {{ filterSize.len }}</div>
+    <div class="filter-size" v-else>{{ filterSize.len }} / {{ total }}</div>
   </article>
   `
 };
