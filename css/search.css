@@ -1,0 +1,97 @@
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-input {
+  position: relative;
+  display: flex;
+  width: 26rem;
+  height: 3rem;
+  margin: 0 0.5rem;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+.search-input label {
+  display: block;
+  position: absolute;
+  transition: all 0.25s;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+label,
+.button {
+  font-weight: bold;
+}
+
+.button {
+  width: 5rem;
+  margin-left: 1rem;
+  border-bottom: 2px solid #67c700;
+  transition: all 0.25s;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  outline: none;
+  border: 0px;
+  height: 100%;
+  transition: color, bottom, background 0.3s;
+  border-bottom: 2px solid hsla(89, 100%, 45%, 0.5);
+  width: 20rem;
+}
+
+input[type=search]:focus ~ label,
+input[type=search]:valid ~ label {
+  color: #77e600;
+  text-shadow: 0 0 1px black, 0 0 2px black;
+  left: 21.25rem;
+}
+
+input[type=search]:focus,
+input[type=search]:valid {
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid #77e600;
+}
+input[type=search]:focus ~ .button,
+input[type=search]:valid ~ .button {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.1s 0.25s;
+}
+
+.filter {
+  display: flex;
+  width: 100%;
+  margin-top: 6px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+}
+.filter li {
+  box-sizing: border-box;
+  width: 5rem;
+  height: 2.7rem;
+  margin: 0 0.5rem;
+  line-height: 2.7rem;
+  border-radius: 8px;
+  border: 2px solid #22b81d;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.filter li:hover {
+  background-color: hsla(89, 100%, 45%, 0.5);
+}
